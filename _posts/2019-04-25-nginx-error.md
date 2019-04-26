@@ -15,10 +15,10 @@ finished: true
 
 解决方法:
 ### Nginx的启动
-```code
+```
 /usr/local/nginx/sbin/nginx -c /usr/local/nginx/conf/nginx.conf  
 ```
 ### 另: Nginx的重加载
-```code
+```
 /usr/local/nginx/sbin/nginx -t -c /usr/local/nginx/conf/nginx.conf
 ```
