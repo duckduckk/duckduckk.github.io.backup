@@ -1,6 +1,12 @@
 ---
+layout: post
 title: "在Ubuntu虚拟机上使用Nginx部署Flask应用"
-tags: [nginx]
+date: 2018-10-29
+author: jjnoob
+categories:
+- 2018-10
+tags:
+- nginx
 ---
 
 > ### 环境为ubuntu18.04虚拟机
