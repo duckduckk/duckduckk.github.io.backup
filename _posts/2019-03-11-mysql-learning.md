@@ -2,10 +2,9 @@
 layout: post
 title: "Mysql-Learning"
 date: 2019-03-11
-author: duckduckk
+author: jjnoob
 category: 2019-03
 tags: web
-finished: true
 ---
 
 
