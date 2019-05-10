@@ -1,6 +1,12 @@
 ---
+layout: post
 title: "华硕电脑玄学装ubuntu"
-tags: [install]
+date: 2018-11-04
+author: jjnoob
+categories:
+- 2018-11
+tags:
+- install
 ---
 
 > ### 玄学至上
