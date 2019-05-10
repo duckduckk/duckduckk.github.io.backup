@@ -1,6 +1,12 @@
 ---
+layout: post
 title: "ctf-wechall-writeup"
-tags: [ctf]
+date: 2018-12-09
+author: jjnoob
+categories:
+- 2018-12
+tags:
+- ctf
 ---
 
 > ### 小渣渣来水 wechall
