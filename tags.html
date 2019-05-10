@@ -3,11 +3,14 @@ layout: page
 permalink: "tags/index.html"
 ---
 
-<div id='tag_cloud'>
-{% for cat in site.categories %}
-<a href="#{{ cat[0] }}" title="{{ cat[0] }}" rel="{{ cat[1].size }}">{{ cat[0] }} ({{ cat[1].size }})</a>
-{% endfor %}
-</div>
+<ul class="tags">
+  <a class="text-muted">Tag cloud:</a>
+  {% for tag in site.tags %}
+  <a href="#{{ tag | first | slugize }}">
+      {{ tag | first }}
+  </a>
+  {% endfor %}
+</ul>
 
 
 <div id="blog-archives">
