@@ -1,6 +1,12 @@
 ---
+layout: post
 title: "debian9删除多余开机启动项"
-tags: [linux]
+date: 2018-11-06
+author: jjnoob
+categories:
+- 2018-11
+tags:
+- linux
 ---
 
 > ### 也就两条命令，很简单。当然也可以通过PE来删除多余的开机启动项
