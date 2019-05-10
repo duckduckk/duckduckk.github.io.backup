@@ -71,7 +71,6 @@ mysql> SHOW DATABASES;
 
 3. SHOW TABLES:
 显示指定数据库的所有表，使用该命令前需要使用 use 命令来选择要操作的数据库。
-
 ```sql
 mysql> use RUNOOB;
 Database changed
