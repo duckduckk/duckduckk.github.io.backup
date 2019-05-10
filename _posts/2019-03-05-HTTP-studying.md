@@ -2,10 +2,9 @@
 layout: post
 title: "HTTP-Studying"
 date: 2019-03-05
-author: duckduckk
+author: jjnoob
 category: 2019-03
 tags: web
-finished: true
 ---
 
 
