@@ -1,8 +1,13 @@
 ---
+layout: post
 title: "Docker 安装 Tomcat"
-tags: [docker]
+date: 2018-11-05
+author: jjnoob
+categories:
+- 2018-11
+tags:
+- docker
 ---
-
 
 > ### 环境为Debian9物理机
 
