@@ -2,10 +2,9 @@
 layout: post
 title: "reversecore_studying"
 date: 2019-02-01
-author: rollbarr
+author: jjnoob
 category: 2019-02
 tags: studying
-finished: true
 ---
 
 > 简单地写写总结，怕忘了。总结写的太详细反而成了鸡肋。这本书还是要好好看的。
