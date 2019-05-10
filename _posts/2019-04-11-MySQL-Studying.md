@@ -71,10 +71,10 @@ mysql> SHOW DATABASES;
 
 3. SHOW TABLES:
 显示指定数据库的所有表，使用该命令前需要使用 use 命令来选择要操作的数据库。
+
 ```sql
 mysql> use RUNOOB;
 Database changed
-
 mysql> SHOW TABLES;
 ```
 
@@ -94,7 +94,6 @@ mysql> SHOW INDEX FROM runoob_tbl;
 该命令将输出Mysql数据库管理系统的性能及统计信息
 ```sql
 mysql> SHOW TABLE STATUS  FROM RUNOOB;   # 显示数据库 RUNOOB 中所有表的信息
-
 mysql> SHOW TABLE STATUS from RUNOOB LIKE 'runoob%';     # 表名以runoob开头的表的信息
 mysql> SHOW TABLE STATUS from RUNOOB LIKE 'runoob%'\G;   # 加上 \G，查询结果按列打印
 ```
@@ -102,32 +101,35 @@ mysql> SHOW TABLE STATUS from RUNOOB LIKE 'runoob%'\G;   # 加上 \G，查询结
 # 三(２) MySQL 用户设置
 >　原教程在这一块不如我之前看过的一篇教程说的明白
 
-［参考链接](https://www.cnblogs.com/chanshuyi/p/mysql_user_mng.html)
+
+[参考链接](https://www.cnblogs.com/chanshuyi/p/mysql_user_mng.html)
 
 ### (1) 新建用户
 1. root登录
 2. 创建用户zhangsan, 密码为zhangsanpsw: 
-```sql
-mysql> create user zhangsan identified by 'zhangsanpwd';
-```
+    ```sql
+    mysql> create user zhangsan identified by 'zhangsanpwd';
+    ```
+    
+    
 3. 可以在mysql.user表里看到新增用户的信息:
-```sql
-mysql> select User,Host,Password from mysql.user where User = 'zhangsan';
-```
+    ```sql
+    mysql> select User,Host,Password from mysql.user where User = 'zhangsan';
+    ```
 
 ### (2) 授权
 1. 授权:
-```sql
-create database zhangsanDb; # 先要创建数据库
+    ```sql
+    create database zhangsanDb; # 先要创建数据库
+    grant all privileges on zhangsanDb.* to zhangsan@'%' identified by 'zhangsan';
+    flush privileges;  # 刷新权限变更
+    ```
 
-grant all privileges on zhangsanDb.* to zhangsan@'%' identified by 'zhangsan';
-
-flush privileges;  # 刷新权限变更
-```
 2. 可以通过show grants命令查看权限授予执行的命令：
-```sql
-show grants for 'zhangsan';
-```
+    ```sql
+    show grants for 'zhangsan';
+    ```
+    
 3. privilegesCode表示授予的权限类型，常用的有以下几种类型:
 * all privileges：所有权限。
 * select：读取权限。
@@ -155,7 +157,6 @@ show grants for 'zhangsan';
 ### (3) 修改密码
 ```sql
 update mysql.user set password = password('zhangsannew') where user = 'zhangsan' and host = '%';
-
 flush privileges;
 ```
 
@@ -168,9 +169,7 @@ drop user zhangsan@'%';
 创建用户并授予指定数据库全部权限：适用于Web应用创建MySQL用户
 ```sql
 create user zhangsan identified by 'zhangsan';
-
 grant all privileges on zhangsanDb.* to zhangsan@'%' identified by 'zhangsan';
-
 flush  privileges;
 ```
 
@@ -220,6 +219,8 @@ mysqli_connect(host,username,password,dbname,port,socket);
 
 ### (3) PHP 连接实例
 > php die() 函数输出一条消息，并退出当前脚本。
+
+
 ```php
 <?php
 $dbhost = 'localhost:3306';  // mysql服务器主机地址
@@ -250,10 +251,12 @@ mysql> create DATABASE RUNOOB;
 ```shell
 [root@host]# mysqladmin -u root -p create RUNOOB
 ```
+
 > mysqladmin 我没有执行成功, 不知道是不是 lnmp 的问题.
 
 ### (2) 使用 PHP 脚本
 > mysqli_close() 函数用来断开与MySQL数据库的链接, 但是通常不需要使用 mysqli_close()，因为已打开的非持久连接会在脚本执行完毕后自动关闭
+
 
 ```php
 <?php
@@ -282,6 +285,7 @@ mysqli_close($conn);
 
 # 七. MMySQL 删除数据库
 ### (1) drop 命令删除数据库
+
 ```sql
 mysql> drop database RUNOOB;
 ```
@@ -319,10 +323,12 @@ mysqli_close($conn);
 # 八. MySQL 选择数据库
 
 ### (1) 从命令提示窗口中选择MySQL数据库
+
 ```sql
 mysql> use RUNOOB;
 Database changed
 ```
+
 成功选择了 RUNOOB 数据库，在后续的操作中都会在 RUNOOB 数据库中执行
 
 ### (2) 使用PHP脚本选择MySQL数据库
@@ -713,6 +719,7 @@ mysqli_close($conn);
 
 ### (1) 命令提示窗口
 初始状态: 
+
 ![img](https://github.com/duckduckk/duckduckk.github.io/blob/master/screenshots/2019-04-10-mysql-table2.png?raw=true)
 
 ```sql
@@ -721,6 +728,8 @@ Query OK, 1 rows affected (0.01 sec)
 ```
 
 修改后:
+
+
 ![img](https://github.com/duckduckk/duckduckk.github.io/blob/master/screenshots/2019-04-10-mysql-table4.png?raw=true)
 
 ### (2) 使用PHP脚本更新数据
@@ -1576,6 +1585,8 @@ Query OK, 0 rows affected (0.02 sec)
 * PHP 通过 mysql_insert_id ()函数来获取执行的插入SQL语句中 AUTO_INCREMENT列的值
 * 获取最后的插入表中的自增列的值
 > 就是如果表中id为113的话, 现在获取到113这个值.
+
+
 ```php
 mysql_query ("INSERT INTO insect (name,date,origin)
 VALUES('moth','2001-09-14','windowsill')", $conn_id);
@@ -1627,7 +1638,7 @@ CREATE TABLE person_tbl
 ```
 
 * INSERT IGNORE INTO 
- INSERT IGNORE 会忽略数据库中已经存在的数据，如果数据库没有数据，就插入新的数据，如果有数据的话就跳过这条数据。这样就可以保留数据库中已经存在数据，达到在间隙中插入数据的目的。当插入数据时，在设置了记录的唯一性后，如果插入重复数据，将不返回错误，只以警告形式返回。
+    INSERT IGNORE 会忽略数据库中已经存在的数据，如果数据库没有数据，就插入新的数据，如果有数据的话就跳过这条数据。这样就可以保留数据库中已经存在数据，达到在间隙中插入数据的目的。当插入数据时，在设置了记录的唯一性后，如果插入重复数据，将不返回错误，只以警告形式返回。
     ```sql
     mysql> INSERT IGNORE INTO person_tbl (last_name, first_name)
         -> VALUES( 'Jay', 'Thomas');
